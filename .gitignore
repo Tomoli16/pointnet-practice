@@ -1,0 +1,27 @@
+venv*/\n__pycache__/\n*.pyc\nruns/\nmodelnet40_h5/\nModelNet40/\ncheckpoints/
+
+# Daten & große Dateien
+data/
+modelnet40_h5/
+ModelNet40/
+checkpoints/
+runs/              # TensorBoard logs
+
+# Python Cache & Bytecode
+__pycache__/
+*.py[cod]
+*.so
+
+# Virtual Environments
+venv*/
+.env/
+*.env
+
+# Jupyter & IPython
+.ipynb_checkpoints/
+
+# OS/Editor spezifisch
+.DS_Store
+*.swp
+.vscode/
+.idea/
