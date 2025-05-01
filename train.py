@@ -6,11 +6,12 @@ from dataset import ModelNet40Dataset
 from utils import accuracy
 import argparse
 import os
+from my_pointnet import SimplePointNet
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--batch_size', type=int, default=32)
-parser.add_argument('--epochs', type=int, default=50)
-parser.add_argument('--data_dir', type=str, default="./modelnet40_h5")
+parser.add_argument('--epochs', type=int, default=10)
+parser.add_argument('--data_dir', type=str, default="./data/ModelNet40")
 args = parser.parse_args()
 
 writer = SummaryWriter()
@@ -21,14 +22,17 @@ test_set = ModelNet40Dataset(args.data_dir, split="test")
 train_loader = DataLoader(train_set, batch_size=args.batch_size, shuffle=True)
 test_loader = DataLoader(test_set, batch_size=args.batch_size)
 
-model = PointNet().to(device)
+
+model = SimplePointNet().to(device)
 optimizer = torch.optim.Adam(model.parameters(), lr=1e-3)
 criterion = torch.nn.CrossEntropyLoss()
 
 for epoch in range(args.epochs):
+    print(f"Epoch {epoch+1}/{args.epochs}")
     model.train()
     total_loss = 0
-    for pts, lbls in train_loader:
+    for i, (pts, lbls) in enumerate(train_loader):
+        print(f"Batch {i+1}/{len(train_loader)}")
         pts, lbls = pts.to(device), lbls.to(device)
         out = model(pts)
         loss = criterion(out, lbls)

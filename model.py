@@ -19,7 +19,7 @@ class PointNet(nn.Module):
         self.bn5 = nn.BatchNorm1d(256)
 
     def forward(self, x):
-        x = x.transpose(2, 1)  # (B, 3, N)
+        x = x.transpose(2, 1)  # (B, 3, N) Tausche 1. und 2. Dimension
         x = F.relu(self.bn1(self.conv1(x)))
         x = F.relu(self.bn2(self.conv2(x)))
         x = F.relu(self.bn3(self.conv3(x)))
