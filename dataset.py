@@ -6,7 +6,20 @@ import trimesh
 import torch
 from torch.utils.data import Dataset
 
-class ModelNet40Dataset(Dataset):
+def random_transform(points):
+        # Zufällige Rotation um Z-Achse
+        theta = np.random.uniform(0, 2 * np.pi)
+        rot = np.array([
+            [np.cos(theta), -np.sin(theta), 0],
+            [np.sin(theta),  np.cos(theta), 0],
+            [0, 0, 1]
+        ])
+        points = points @ rot.T
+        # Leichtes Rauschen
+        points += np.random.normal(0, 0.02, points.shape)
+        return points
+
+class ModelNetDataset(Dataset):
     def __init__(self, root_dir, split="train", num_points=1024, transform=None):
         self.root_dir = root_dir
         self.split = split
@@ -33,6 +46,10 @@ class ModelNet40Dataset(Dataset):
             points = self.transform(points)
         
         points = torch.tensor(points, dtype=torch.float32)
+        # Normalize the points prevent division by zero
+        points = points - points.min(dim=0, keepdim=True)[0]
+        points = points / (points.max(dim=0, keepdim=True)[0] - points.min(dim=0, keepdim=True)[0])
+
         label = torch.tensor(label, dtype=torch.long)
         return points, label
 

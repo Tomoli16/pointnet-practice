@@ -1,0 +1,7 @@
+{"time":"2025-05-02T13:48:16.550512109+02:00","level":"INFO","msg":"stream: starting","core version":"0.19.10","symlink path":"/home/tsanchez/Pointnet/wandb/run-20250502_134816-rsypzlx1/logs/debug-core.log"}
+{"time":"2025-05-02T13:48:16.806535025+02:00","level":"INFO","msg":"created new stream","id":"rsypzlx1"}
+{"time":"2025-05-02T13:48:16.806572114+02:00","level":"INFO","msg":"stream: started","id":"rsypzlx1"}
+{"time":"2025-05-02T13:48:16.806588004+02:00","level":"INFO","msg":"sender: started","stream_id":"rsypzlx1"}
+{"time":"2025-05-02T13:48:16.806595748+02:00","level":"INFO","msg":"writer: Do: started","stream_id":"rsypzlx1"}
+{"time":"2025-05-02T13:48:16.806627107+02:00","level":"INFO","msg":"handler: started","stream_id":"rsypzlx1"}
+{"time":"2025-05-02T13:48:17.11498863+02:00","level":"INFO","msg":"Starting system monitor"}

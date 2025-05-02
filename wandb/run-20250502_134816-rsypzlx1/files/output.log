@@ -1,0 +1,30 @@
+Using device: cuda
+Epoch 1/10
+Debugging batch...: 0.0000
+
+🔎 Labels im Batch: [2, 3, 4, 7, 8, 9]
+🧠 Prediction class distribution: tensor([0, 1, 0, 1, 0, 0, 1, 4, 1])
+✅ Beispiel Vorhersagen: [7, 6, 3, 8, 1]
+🎯 Ground Truth: [4, 8, 9, 2, 3]
+📊 Logits (erster Punkt): [-0.544036328792572, -0.16143500804901123, -0.20916974544525146, 0.37118464708328247, -0.45587149262428284, -0.5516448020935059, -0.41529151797294617, 0.6142443418502808, 0.2891867458820343, -0.14759263396263123]
+🔁 Softmax-Summe: 1.0
+Debugging batch done.
+Debugging batch...ss: 0.1707
+
+🔎 Labels im Batch: [1, 2, 4, 7, 8]
+🧠 Prediction class distribution: tensor([0, 1, 3, 0, 1, 0, 0, 2, 1])
+✅ Beispiel Vorhersagen: [2, 2, 4, 7, 1]
+🎯 Ground Truth: [2, 1, 4, 7, 1]
+📊 Logits (erster Punkt): [0.03292025998234749, 0.8001178503036499, 1.6691310405731201, -1.7590699195861816, -2.7061121463775635, -1.901720404624939, -1.9764961004257202, 0.738462507724762, -2.789893865585327, -0.7394936680793762]
+🔁 Softmax-Summe: 1.0000001192092896
+Debugging batch done.
+Debugging batch...ss: 0.1494
+
+🔎 Labels im Batch: [1, 2, 4, 5, 7]
+🧠 Prediction class distribution: tensor([0, 2, 1, 0, 0, 1, 1, 3])
+✅ Beispiel Vorhersagen: [7, 5, 7, 2, 1]
+🎯 Ground Truth: [7, 5, 7, 2, 1]
+📊 Logits (erster Punkt): [-2.5561790466308594, -0.8831936717033386, 0.13524016737937927, -1.6405372619628906, -3.2750308513641357, -1.367655873298645, -2.4685280323028564, 0.21428681910037994, -0.48624855279922485, -0.41128700971603394]
+🔁 Softmax-Summe: 1.0
+Debugging batch done.
+Evaluating on test set...438
